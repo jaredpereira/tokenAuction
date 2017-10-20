@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MetaCoin - Truffle Webpack Demo w/ Frontend</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>One Token</h1>
+  <h3> The auction has <span class="black"><span id="remainingTime"></span> minutes left</span></h3>
+  <h3> The  highest bid is: <span class="black"><span id="highestBid"></span> ETH</span></h3>
+
+  <br>
+  <h1>Bid</h1>
+  <br><label for="amount">Amount:</label><input type="text" id="amount" placeholder="e.g., 95"></input>
+  <br><br><button id="send" onclick="App.bid()">Place Bid</button>
+  <br><br>
+  <span id="status"></span>
+  <br>
+  <h1>Bids</h1>
+  <div id="bids"></div>
+</body>
+</html>
