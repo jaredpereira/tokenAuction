@@ -91,10 +91,6 @@ window.App = {
       })
   },
 
-  endAuction: function() {
-      var auction;
-  },
-
   getRemainingTime: function(){
       var timeElement = document.getElementById('remainingTime')
 
