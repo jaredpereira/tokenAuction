@@ -4,6 +4,7 @@ import './StandardToken.sol';
 contract TokenAuction is StandardToken {
     address public highestBidder;
     uint public highestBid;
+    bool ended;
 
     uint public endTime;
     event Bid(uint bidValue, address bidder);
@@ -25,7 +26,10 @@ contract TokenAuction is StandardToken {
 
     function endAuction() public {
         require(now > endTime);
+        require(!ended);
+
         balances[highestBidder] = 1;
+        ended = true;
     }
 
 }

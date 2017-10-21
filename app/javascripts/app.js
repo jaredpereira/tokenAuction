@@ -10,7 +10,7 @@ import tokenAuction_artifacts from '../../build/contracts/TokenAuction.json'
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 var tokenAuction = contract(tokenAuction_artifacts);
-var auction = tokenAuction.at('0x5005afae33180adc18d379fe5d0158ab5e97257d')
+var auction = tokenAuction.at('0x153c78a7d169e7cb68c97e1e76fb9523ecd49a77')
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -74,7 +74,7 @@ window.App = {
       self.refreshHighestBid();
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error sending coin; see log.");
+      self.setStatus("Error sending bid; see log.");
     });
   },
 
@@ -100,6 +100,16 @@ window.App = {
               console.log(timeLeft)
               timeElement.textContent = timeLeft.toString()
           })
+      })
+  },
+
+  endAuction: function(){
+      this.setStatus("Initiating transaction... (please wait)");
+      auction.endAuction().then(function(res){
+          self.setStatus("Transaction complete!");
+      }).catch(function(e){
+          console.log(e)
+          self.setStatus("Error sending transaction; see log.")
       })
   }
 
