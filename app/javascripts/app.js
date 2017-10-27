@@ -10,7 +10,7 @@ import tokenAuction_artifacts from '../../build/contracts/TokenAuction.json'
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 var tokenAuction = contract(tokenAuction_artifacts);
-var auction = tokenAuction.at('0xbc059208ae1a774a2c5c2703329fb26dd0678e97')
+var auction = tokenAuction.at('0x0a378675a1b7d5ef33df0a844598073b46cfd608')
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.

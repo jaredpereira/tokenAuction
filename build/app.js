@@ -21974,7 +21974,7 @@ module.exports = Jsonrpc;
 /* 53 */
 /***/ (function(module, exports) {
 
-module.exports = {"contract_name":"TokenAuction","abi":[{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"bid","outputs":[],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"endTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"highestBidder","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"highestBid","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"endAuction","outputs":[],"payable":false,"type":"function"},{"inputs":[{"name":"auctionDuration","type":"uint256"}],"payable":false,"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"bidValue","type":"uint256"},{"indexed":false,"name":"bidder","type":"address"}],"name":"Bid","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}],"unlinked_binary":"0x6060604052341561000c57fe5b60405160208061060083398101604052515b42603c8202016006555b505b6105c7806100396000396000f300606060405236156100935763ffffffff60e060020a600035041663095ea7b3811461009557806318160ddd146100c85780631998aeef146100ea57806323b872dd146100f45780633197cbb61461012d57806370a082311461014f57806391f901571461017d578063a9059cbb146101a9578063d57bde79146101dc578063dd62ed3e146101fe578063fe67a54b14610232575bfe5b341561009d57fe5b6100b4600160a060020a0360043516602435610244565b604080519115158252519081900360200190f35b34156100d057fe5b6100d86102af565b60408051918252519081900360200190f35b6100f26102b5565b005b34156100fc57fe5b6100b4600160a060020a0360043581169060243516604435610343565b604080519115158252519081900360200190f35b341561013557fe5b6100d861043e565b60408051918252519081900360200190f35b341561015757fe5b6100d8600160a060020a0360043516610444565b60408051918252519081900360200190f35b341561018557fe5b61018d610463565b60408051600160a060020a039092168252519081900360200190f35b34156101b157fe5b6100b4600160a060020a0360043516602435610472565b604080519115158252519081900360200190f35b34156101e457fe5b6100d86104f8565b60408051918252519081900360200190f35b341561020657fe5b6100d8600160a060020a03600435811690602435166104fe565b60408051918252519081900360200190f35b341561023a57fe5b6100f261052b565b005b600160a060020a03338116600081815260026020908152604080832094871680845294825280832086905580518681529051929493927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a35060015b92915050565b60005481565b6006544290116102c55760006000fd5b600034116102d35760006000fd5b6004543411156102fd573460045560038054600160a060020a03191633600160a060020a03161790555b60408051348152600160a060020a033316602082015281517fd88316c1b83cbeed61627b1084e3de7ced6b85ee432bd3b1dbdb7180005a6556929181900390910190a15b565b600160a060020a0380841660008181526002602090815260408083203390951683529381528382205492825260019052918220548390108015906103875750828110155b15156103935760006000fd5b600160a060020a03808516600090815260016020526040808220805487019055918716815220805484900390556000198110156103f857600160a060020a03808616600090815260026020908152604080832033909416835292905220805484900390555b83600160a060020a031685600160a060020a031660008051602061057c833981519152856040518082815260200191505060405180910390a3600191505b509392505050565b60065481565b600160a060020a0381166000908152600160205260409020545b919050565b600354600160a060020a031681565b600160a060020a033316600090815260016020526040812054829010156104995760006000fd5b600160a060020a033381166000818152600160209081526040808320805488900390559387168083529184902080548701905583518681529351919360008051602061057c833981519152929081900390910190a35060015b92915050565b60045481565b600160a060020a038083166000908152600260209081526040808320938516835292905220545b92915050565b600654421161053a5760006000fd5b60055460ff161561054b5760006000fd5b600354600160a060020a031660009081526001602081905260409091208190556005805460ff191690911790555b5600ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3efa165627a7a72305820c4ba41a3ffaa25c383d9d32b52f7549d4af658c20fbfadc1313ffa772e86357c0029","networks":{"1508531385423":{"events":{"0xd88316c1b83cbeed61627b1084e3de7ced6b85ee432bd3b1dbdb7180005a6556":{"anonymous":false,"inputs":[{"indexed":false,"name":"bidValue","type":"uint256"},{"indexed":false,"name":"bidder","type":"address"}],"name":"Bid","type":"event"},"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef":{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},"0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925":{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}},"links":{},"address":"0x0c80ca8ef69917135cead3737d615ba2820c5e91","updated_at":1508534543335}},"schema_version":"0.0.5","updated_at":1508544157301}
+module.exports = {"contract_name":"TokenAuction","abi":[{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"endTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"bids","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_message","type":"string"}],"name":"bid","outputs":[],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"highestBidder","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"endAuction","outputs":[],"payable":false,"type":"function"},{"inputs":[{"name":"auctionDuration","type":"uint256"}],"payable":false,"type":"constructor"},{"payable":false,"type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"bidder","type":"address"},{"indexed":false,"name":"message","type":"string"}],"name":"Bid","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}],"unlinked_binary":"0x6060604052341561000c57fe5b60405160208061074c83398101604052515b42603c8202016006555b505b610713806100396000396000f300606060405236156100935763ffffffff60e060020a600035041663095ea7b381146100bd57806318160ddd146100f057806323b872dd146101125780633197cbb61461014b57806362ea82db1461016d57806370a082311461019b5780637aef951c146101c957806391f9015714610219578063a9059cbb14610245578063dd62ed3e14610278578063fe67a54b146102ac575b341561009b57fe5b6100bb5b6100b860206040519081016040528060008152506102be565b5b565b005b34156100c557fe5b6100dc600160a060020a0360043516602435610412565b604080519115158252519081900360200190f35b34156100f857fe5b61010061047d565b60408051918252519081900360200190f35b341561011a57fe5b6100dc600160a060020a0360043581169060243516604435610483565b604080519115158252519081900360200190f35b341561015357fe5b61010061057e565b60408051918252519081900360200190f35b341561017557fe5b610100600160a060020a0360043516610584565b60408051918252519081900360200190f35b34156101a357fe5b610100600160a060020a0360043516610596565b60408051918252519081900360200190f35b6100bb600480803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437509496506102be95505050505050565b005b341561022157fe5b6102296105b5565b60408051600160a060020a039092168252519081900360200190f35b341561024d57fe5b6100dc600160a060020a03600435166024356105c4565b604080519115158252519081900360200190f35b341561028057fe5b610100600160a060020a036004358116906024351661064a565b60408051918252519081900360200190f35b34156102b457fe5b6100bb610677565b005b426006541180156102cf5750600034115b15156102db5760006000fd5b600160a060020a03331660009081526004602052604090205415156103bb577f174326f8360c1ec8ee43b74db0d779543e88dece1cc4654c2904061a0aba7af633826040518083600160a060020a0316600160a060020a0316815260200180602001828103825283818151815260200191508051906020019080838360008314610380575b80518252602083111561038057601f199092019160209182019101610360565b505050905090810190601f1680156103ac5780820380516001836020036101000a031916815260200191505b50935050505060405180910390a15b600160a060020a033381166000818152600460205260408082208054340190819055600354909416825281205491905290111561040e5760038054600160a060020a03191633600160a060020a03161790555b5b50565b600160a060020a03338116600081815260026020908152604080832094871680845294825280832086905580518681529051929493927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a35060015b92915050565b60005481565b600160a060020a0380841660008181526002602090815260408083203390951683529381528382205492825260019052918220548390108015906104c75750828110155b15156104d35760006000fd5b600160a060020a038085166000908152600160205260408082208054870190559187168152208054849003905560001981101561053857600160a060020a03808616600090815260026020908152604080832033909416835292905220805484900390555b83600160a060020a031685600160a060020a03166000805160206106c8833981519152856040518082815260200191505060405180910390a3600191505b509392505050565b60065481565b60046020526000908152604090205481565b600160a060020a0381166000908152600160205260409020545b919050565b600354600160a060020a031681565b600160a060020a033316600090815260016020526040812054829010156105eb5760006000fd5b600160a060020a03338116600081815260016020908152604080832080548890039055938716808352918490208054870190558351868152935191936000805160206106c8833981519152929081900390910190a35060015b92915050565b600160a060020a038083166000908152600260209081526040808320938516835292905220545b92915050565b6006544211801561068b575060055460ff16155b15156106975760006000fd5b600354600160a060020a031660009081526001602081905260409091208190556005805460ff191690911790555b5600ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3efa165627a7a72305820e800f11b87a6ea439f91ea7013e90f7dff9abc280931c18796f72d4c017a11810029","networks":{},"schema_version":"0.0.5","updated_at":1509089227283}
 
 /***/ }),
 /* 54 */
@@ -22098,13 +22098,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 var tokenAuction = __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default()(__WEBPACK_IMPORTED_MODULE_3__build_contracts_TokenAuction_json___default.a);
-var auction = tokenAuction.at('0x153c78a7d169e7cb68c97e1e76fb9523ecd49a77')
+var auction = tokenAuction.at('0x0a378675a1b7d5ef33df0a844598073b46cfd608')
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
 // For application bootstrapping, check out window.addEventListener below.
 var accounts;
 var account;
+
+var bids = []
 
 window.App = {
   start: function() {
@@ -22125,6 +22127,8 @@ window.App = {
         return;
       }
 
+      document.getElementById("address").textContent = auction.address
+
       accounts = accs;
       account = accounts[0];
 
@@ -22141,23 +22145,29 @@ window.App = {
 
   refreshHighestBid: function() {
     var self = this;
-    auction.highestBid.call().then(function(value) {
-      var highestBid_element = document.getElementById("highestBid");
-      highestBid_element.innerHTML = web3.fromWei(value.valueOf(), 'ether');
-    }).catch(function(e) {
-      console.log(e);
-      self.setStatus("Error getting balance; see log.");
-    });
+    auction.highestBidder.call().then(function(bidder) {
+        var highestBidder_element = document.getElementById("highestBidder")
+        highestBidder_element.textContent = bidder
+        return auction.bids(bidder)
+        }).then(function(bid){
+            var highestBid_element = document.getElementById("highestBid");
+            highestBid_element.textContent= web3.fromWei(bid.toNumber(), 'ether');
+        }).catch(function(e) {
+            console.log(e);
+            self.setStatus("Error getting balance; see log.");
+        });
   },
 
   bid: function() {
     var self = this;
 
-    var amount = document.getElementById("amount").value;
+    var amount = parseFloat(document.getElementById("amount").value);
+    var message = document.getElementById("message").value
 
     this.setStatus("Initiating transaction... (please wait)");
+      console.log(account)
 
-    auction.bid({from: account, value: web3.toWei(amount, 'ether')}).then(function() {
+    auction.bid(message, {from: account, value: web3.toWei(amount, 'ether')}).then(function() {
       self.setStatus("Transaction complete!");
       self.refreshHighestBid();
     }).catch(function(e) {
@@ -22170,12 +22180,17 @@ window.App = {
       var bidEvent
       var bidsElement = document.getElementById("bids")
       bidEvent = auction.Bid({_from:web3.eth.coinbase},{fromBlock: 0, toBlock: 'latest'})
+      console.log(bidEvent)
       bidEvent.watch(function(err,res){
-              var bid = document.createElement('div')
-              let bidder = res.args.bidder
-              let bidValue = web3.fromWei(res.args.bidValue.toNumber(), 'ether')
-              bid.textContent = bidder + " bid: " + bidValue + " ETH" 
+          var bid = document.createElement('div')
+          let bidder = res.args.bidder
+          let bidMessage = res.args.message;
+          auction.bids(bidder).then(function(bidAmount){
+              bid.innerHTML= "<i>" + bidder + "</i> " + "bid: <b>" + web3.fromWei(bidAmount, 'ether') + " ETH</b> with the message \"" + bidMessage + "\""
               bidsElement.appendChild(bid)
+          }).catch(function(e){
+              console.log(e)
+          })
       })
   },
 
@@ -22185,7 +22200,6 @@ window.App = {
       web3.eth.getBlock('latest', function(err, latestBlock){
           auction.endTime.call().then(function(result){
               var timeLeft = (result - latestBlock.timestamp)/60
-              console.log(timeLeft)
               timeElement.textContent = timeLeft.toString()
           })
       })
@@ -22206,11 +22220,9 @@ window.App = {
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     // Use Mist/MetaMask's provider
     window.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(web3.currentProvider);
   } else {
-    console.warn("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     window.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(new __WEBPACK_IMPORTED_MODULE_1_web3___default.a.providers.HttpProvider("http://localhost:8545"));
   }
