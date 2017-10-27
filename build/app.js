@@ -22153,7 +22153,7 @@ window.App = {
   bid: function() {
     var self = this;
 
-    var amount = parseInt(document.getElementById("amount").value);
+    var amount = document.getElementById("amount").value;
 
     this.setStatus("Initiating transaction... (please wait)");
 

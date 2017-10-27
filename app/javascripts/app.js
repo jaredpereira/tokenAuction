@@ -10,13 +10,15 @@ import tokenAuction_artifacts from '../../build/contracts/TokenAuction.json'
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 var tokenAuction = contract(tokenAuction_artifacts);
-var auction = tokenAuction.at('0x153c78a7d169e7cb68c97e1e76fb9523ecd49a77')
+var auction = tokenAuction.at('0xbc059208ae1a774a2c5c2703329fb26dd0678e97')
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
 // For application bootstrapping, check out window.addEventListener below.
 var accounts;
 var account;
+
+var bids = []
 
 window.App = {
   start: function() {
@@ -37,6 +39,8 @@ window.App = {
         return;
       }
 
+      document.getElementById("address").textContent = auction.address
+
       accounts = accs;
       account = accounts[0];
 
@@ -53,23 +57,29 @@ window.App = {
 
   refreshHighestBid: function() {
     var self = this;
-    auction.highestBid.call().then(function(value) {
-      var highestBid_element = document.getElementById("highestBid");
-      highestBid_element.innerHTML = web3.fromWei(value.valueOf(), 'ether');
-    }).catch(function(e) {
-      console.log(e);
-      self.setStatus("Error getting balance; see log.");
-    });
+    auction.highestBidder.call().then(function(bidder) {
+        var highestBidder_element = document.getElementById("highestBidder")
+        highestBidder_element.textContent = bidder
+        return auction.bids(bidder)
+        }).then(function(bid){
+            var highestBid_element = document.getElementById("highestBid");
+            highestBid_element.textContent= web3.fromWei(bid.toNumber(), 'ether');
+        }).catch(function(e) {
+            console.log(e);
+            self.setStatus("Error getting balance; see log.");
+        });
   },
 
   bid: function() {
     var self = this;
 
-    var amount = parseInt(document.getElementById("amount").value);
+    var amount = parseFloat(document.getElementById("amount").value);
+    var message = document.getElementById("message").value
 
     this.setStatus("Initiating transaction... (please wait)");
+      console.log(account)
 
-    auction.bid({from: account, value: web3.toWei(amount, 'ether')}).then(function() {
+    auction.bid(message, {from: account, value: web3.toWei(amount, 'ether')}).then(function() {
       self.setStatus("Transaction complete!");
       self.refreshHighestBid();
     }).catch(function(e) {
@@ -82,12 +92,17 @@ window.App = {
       var bidEvent
       var bidsElement = document.getElementById("bids")
       bidEvent = auction.Bid({_from:web3.eth.coinbase},{fromBlock: 0, toBlock: 'latest'})
+      console.log(bidEvent)
       bidEvent.watch(function(err,res){
-              var bid = document.createElement('div')
-              let bidder = res.args.bidder
-              let bidValue = web3.fromWei(res.args.bidValue.toNumber(), 'ether')
-              bid.textContent = bidder + " bid: " + bidValue + " ETH" 
+          var bid = document.createElement('div')
+          let bidder = res.args.bidder
+          let bidMessage = res.args.message;
+          auction.bids(bidder).then(function(bidAmount){
+              bid.innerHTML= "<i>" + bidder + "</i> " + "bid: <b>" + web3.fromWei(bidAmount, 'ether') + " ETH</b> with the message \"" + bidMessage + "\""
               bidsElement.appendChild(bid)
+          }).catch(function(e){
+              console.log(e)
+          })
       })
   },
 
@@ -97,7 +112,6 @@ window.App = {
       web3.eth.getBlock('latest', function(err, latestBlock){
           auction.endTime.call().then(function(result){
               var timeLeft = (result - latestBlock.timestamp)/60
-              console.log(timeLeft)
               timeElement.textContent = timeLeft.toString()
           })
       })
@@ -118,11 +132,9 @@ window.App = {
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
-    console.warn("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
